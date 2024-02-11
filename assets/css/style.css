@@ -247,10 +247,10 @@ h6 {
   z-index: 1;
 }
 
-#home .home-container {
+#home .home-container1, #home .home-container2 {
   position: relative;
   z-index: 2;
-  min-width: 300px;
+  min-width: 490px;
 }
 
 #home h1 {
@@ -291,6 +291,16 @@ h6 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
+  }
+
+  #home .home-container1 {
+    min-width: 300px;
+  }
+
+  #home .home-container2 {
+    min-width: 300px;
+    width: 300px;
+    height: 350px;
   }
 }
 
