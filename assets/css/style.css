@@ -74,6 +74,13 @@ h6 {
   overflow-y: auto;
 }
 
+#header .translate {
+  color: #FFF;
+  span img {
+    filter: brightness(40%)
+  }
+}
+
 #header .profile img {
   margin: 15px auto;
   display: block;
@@ -429,7 +436,7 @@ section {
 .curriculum .curriculum-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #1F5297;
+  border-left: 2px solid #149DDD;
   position: relative;
 }
 
@@ -471,7 +478,7 @@ section {
   left: -9px;
   top: 0;
   background: #FFF;
-  border: 2px solid #1F5297;
+  border: 2px solid #149DDD;
 }
 
 /*--------------------------------------------------------------
