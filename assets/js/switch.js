@@ -10,7 +10,7 @@
 
   /**
    * @function darkmode
-   * @summary: changes the theme to 'dark mode' and save settings to local stroage.
+   * @summary: changes the theme to 'dark mode' and save settings to local storage.
    * Basically, replaces/toggles every CSS class that has '-light' class with '-dark'
    */
   function darkMode() {
@@ -31,8 +31,8 @@
     }
 
     // Tables
-    var tables = document.querySelectorAll('table');
-    for (var i = 0; i < tables.length; i++) {
+    let tables = document.querySelectorAll('table');
+    for (let i = 0; i < tables.length; i++) {
       // add table-dark class to each table
       tables[i].classList.add('table-dark');
     }
@@ -46,7 +46,7 @@
 
   /**
    * @function lightmode
-   * @summary: changes the theme to 'light mode' and save settings to local stroage.
+   * @summary: changes the theme to 'light mode' and save settings to local storage.
    */
   function lightMode() {
     document.querySelectorAll('.bg-dark').forEach((element) => {
@@ -66,8 +66,8 @@
     }
 
     // Tables
-    var tables = document.querySelectorAll('table');
-    for (var i = 0; i < tables.length; i++) {
+    let tables = document.querySelectorAll('table');
+    for (let i = 0; i < tables.length; i++) {
       if (tables[i].classList.contains('table-dark')) {
         tables[i].classList.remove('table-dark');
       }
@@ -104,12 +104,12 @@
   }
 
   function setup() {
-    var settings = localStorage.getItem('lightSwitch');
+    let settings = localStorage.getItem('lightSwitch');
     if (settings == null) {
       settings = getSystemDefaultTheme();
     }
 
-    if (settings == 'dark') {
+    if (settings === 'dark') {
       lightSwitch.checked = true;
     }
 
