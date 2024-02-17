@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Pratica 4</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+        }
+
+        fieldset {
+            width: 20em;
+            max-width: 50%;
+            height: 17em;
+            max-height: 50%;
+            margin-right: 2em;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1em;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        input {
+                width: 100%;
+                height: 100%;
+        }
+        @media (max-width: 768px) {
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+            fieldset {
+                margin-bottom: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Cadastro de Funcionários</legend>
+        <form id="form1">
+            <div>
+                <label for="nome">Nome: </label>
+                <input id="nome" type="text" oninput="inputErroStyle(nome)">
+            </div>
+            <div>
+                <label for="idade">Idade: </label>
+                <input id="idade" type="number" min="16" max="80" oninput="inputErroStyle(idade)">
+            </div>
+            <div>
+                <label for="cargo">Cargo: </label>
+                <select id="cargo" onchange="mostrarCampos()" oninput="inputErroStyle(cargo)">
+                    <option value="" disabled selected>Selecione o seu Cargo</option>
+                    <option value="gerente">Gerente</option>
+                    <option value="desenvolvedor">Desenvolvedor</option>
+                </select>
+            </div>
+            <div id="departamentoDiv" style="display: none;">
+                <label id="departamento" for="departInput">Departamento: </label><br>
+                <input id="departInput" type="text"  oninput="inputErroStyle(departInput)">
+            </div>
+            <div id="linguagemDiv" style="display: none;">
+                <label id="linguagem" for="linguaInput">Linguagem: </label><br>
+                <input id="linguaInput" type="text" oninput="inputErroStyle(linguaInput)">
+            </div>
+            <div>
+                <button id="button" type="submit" form="form1">Cadastrar</button>
+            </div>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Funções</legend>
+        <div>
+            <label for="listaFuncionarios">Lista de Funcionário(a)s: </label>
+            <select id="listaFuncionarios">
+                <option value="" disabled selected>Não há funcionário(a) cadastrado</option>
+            </select>
+        </div>
+        <div>
+            <button id="apresentar" onclick="apresentarFuncionario()">Se Apresentar</button>
+        </div>
+        <div>
+            <button id="trabalhar" onclick="trabalharFuncionario()">Trabalho</button>
+        </div>
+        <div>
+            <button id="gerenciar" onclick="gerenciarFuncionario()">Gerenciando</button>
+        </div>
+        <div>
+            <button id="programar" onclick="programarFuncionario()">Programando</button>
+        </div>
+    </fieldset>
+</body>
+<script>
+    class Funcionario {
+        constructor(nome, idade, cargo) {
+            this.nome = nome;
+            this.idade = idade;
+            this.cargo = cargo;
+        }
+
+        seApresentar() {
+            alert(`Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`);
+        }
+
+        trabalhar() {
+            alert(`${this.nome} está trabalhando no cargo de ${this.cargo}.`);
+        }
+    }
+
+    class Gerente extends Funcionario {
+        constructor(nome, idade, cargo, departamento) {
+            super(nome, idade, cargo);
+            this.departamento = departamento;
+        }
+
+        gerenciar() {
+            alert(`O departamento ${this.departamento} está sendo gerenciado por ${this.nome}.`);
+        }
+    }
+
+    class Desenvolvedor extends Funcionario {
+        constructor(nome, idade, cargo, linguagem) {
+            super(nome, idade, cargo);
+            this.linguagem = linguagem;
+        }
+
+        programar() {
+            alert(`${this.nome} está programando, a linguagem mais utilizada é ${this.linguagem}.`);
+        }
+    }
+
+    var funcionarios = [];
+
+    var botao = document.querySelector("#button");
+    try {
+        botao.addEventListener("click", function(event) {
+            event.preventDefault();
+            if(validacaoDoForm()) {
+                let formulario = document.querySelector("#form1");
+                let nome = formulario.nome.value;
+                let idade = formulario.idade.value;
+                let cargo = formulario.cargo.value;
+                let departamento = formulario.departInput.value;
+                let linguagem = formulario.linguaInput.value;
+        
+                if(cargo === "gerente") {
+                    var gerente = new Gerente(nome, idade, cargo, departamento);
+                    funcionarios.push(gerente);
+                    criarOption();
+                    document.querySelector("#form1").reset();
+                    mostrarCampos();
+                }
+                else if (cargo === "desenvolvedor") {
+                    var desenvolvedor = new Desenvolvedor(nome, idade, cargo, linguagem);
+                    funcionarios.push(desenvolvedor);
+                    criarOption();
+                    document.querySelector("#form1").reset();
+                    mostrarCampos();
+                }
+                else {
+                    throw new Error("Este cargo não existe")
+                }
+            }
+        });
+    } catch (error) {
+        console.log("Ocorreu um erro: " + error.message);
+    }
+
+    function validacaoDoForm() {
+        event.preventDefault();
+        let nome = document.getElementById('nome');
+        let idade = document.getElementById('idade');
+        let cargo = document.getElementById('cargo');
+        let departamento = document.getElementById('departInput');
+        let linguagem = document.getElementById('linguaInput');
+
+        if (nome.value === '') {
+            exibirErro(`Por favor, insira o seu nome.`);
+            nome.style.outline = '2px solid red';
+            return false;
+        }
+
+        if (funcionarios.some(funcionario => funcionario.nome === nome.value)) {
+            exibirErro(`Já existe um funcionário com o nome ${nome.value}.`);
+            nome.style.outline = '2px solid red';
+            return false;
+        }
+
+        if (idade.value < 16 || idade.value > 80) {
+            exibirErro(`Por favor, insira uma idade válida. (Min. 16 e Max. 80)`);
+            idade.style.outline = '2px solid red';
+            return false;
+        }
+
+        if (cargo.value === '') {
+            exibirErro(`Por favor, selecione o seu cargo.`);
+            cargo.style.outline = '2px solid red';
+            return false;
+        }
+
+        if (cargo.value === 'gerente' && departamento.value === '') {
+            exibirErro(`Por favor, insira o departamento.`);
+            departamento.style.outline = '2px solid red';
+            return false;
+        }
+
+        if (cargo.value === 'desenvolvedor' && linguagem.value === '') {
+            exibirErro(`Por favor, insira a linguagem.`);
+            linguagem.style.outline = '2px solid red';
+            return false;
+        }
+
+        alert(`${nome.value} criado com sucesso!\nBem vindo a nossa empresa.`);
+        return true;
+    }
+
+    function criarOption() {
+        var select_list = document.getElementById("listaFuncionarios");
+        select_list.innerHTML = '';
+        for (let i = 0; i < funcionarios.length; i++) {
+            var option_lista = document.createElement("option");
+            option_lista.value = funcionarios[i].nome;
+            option_lista.text = funcionarios[i].nome;
+            select_list.add(option_lista);
+        }
+    }
+
+    function mostrarCampos() {
+        try {
+            let cargo = document.getElementById('cargo').value;
+            let departamentoDiv = document.getElementById('departamentoDiv');
+            let linguagemDiv = document.getElementById('linguagemDiv');
+            let departInput = document.getElementById('departInput');
+            let linguaInput = document.getElementById('linguaInput');
+
+            if (cargo === 'gerente') {
+                departamentoDiv.style.display = 'block';
+                linguagemDiv.style.display = 'none';
+                linguaInput.value = '';
+                linguaInput.style.outline = '0';
+            } else if (cargo === 'desenvolvedor') {
+                departamentoDiv.style.display = 'none';
+                linguagemDiv.style.display = 'block';
+                departInput.value = '';
+                departInput.style.outline = '0';
+            } else if (cargo === ''){
+                departamentoDiv.style.display = 'none';
+                linguagemDiv.style.display = 'none';
+                departInput.value = '';
+                linguaInput.value = '';
+            } else {
+                throw new Error(`O cargo ${cargo} não existe`);
+            }  
+        } catch (error) {
+            console.error(error);
+            exibirErro("Por favor, selecione um cargo válido.");
+        }
+    }
+
+    function apresentarFuncionario() {
+        const selectedIndex = document.getElementById('listaFuncionarios').selectedIndex;
+        funcionarios[selectedIndex].seApresentar();
+    }
+
+    function trabalharFuncionario() {
+        const selectedIndex = document.getElementById('listaFuncionarios').selectedIndex;
+        funcionarios[selectedIndex].trabalhar();
+    }
+
+    function gerenciarFuncionario() {
+        const selectedIndex = document.getElementById('listaFuncionarios').selectedIndex;
+        const selectedFuncionario = funcionarios[selectedIndex];
+        selectedFuncionario.cargo === 'gerente' ? selectedFuncionario.gerenciar() : exibirErro(`${selectedFuncionario.nome} não é um Gerente, portanto não pode gerenciar.`);
+    }
+
+    function programarFuncionario() {
+        const selectedIndex = document.getElementById('listaFuncionarios').selectedIndex;
+        const selectedFuncionario = funcionarios[selectedIndex];
+        selectedFuncionario.cargo === 'desenvolvedor' ? selectedFuncionario.programar() : exibirErro(`${selectedFuncionario.nome} não é um Desenvolvedor, portanto não pode programar.`);
+    }
+
+    function exibirErro(mensagem) {
+        alert(mensagem);
+    }
+
+    function inputErroStyle(nomeInput) {
+        nomeInput.style.outline = '0';
+    }
+ </script>
+</html>
