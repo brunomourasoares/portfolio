@@ -36,7 +36,7 @@
             <form id="form1">
                 <div>
                     <label for="nome">Nome: </label>
-                    <input id="nome" type="text" min="3" oninput="inputErroStyle(nome)" onkeydown="return /[a-z ]/i.test(event.key)">
+                    <input id="nome" type="text" oninput="inputErroStyle(nome)" onkeydown="return /[a-z ]/i.test(event.key)">
                 </div>
                 <div>
                     <label for="idade">Idade: </label>
@@ -170,7 +170,13 @@
         let linguagem = document.getElementById('linguaInput');
 
         if (nome.value === '') {
-            exibirErro(`Por favor, insira o seu nome.`);
+            exibirErro(`Por favor, insira um nome válido`);
+            nome.style.outline = '2px solid red';
+            return false;
+        }
+
+        if(nome.value.length < 3) {
+            exibirErro(`${nome.value} não é um nome válido. (Min. 3 caracteres)`);
             nome.style.outline = '2px solid red';
             return false;
         }
