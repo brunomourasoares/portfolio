@@ -36,7 +36,7 @@
             <form id="form1">
                 <div>
                     <label for="nome">Nome: </label>
-                    <input id="nome" type="text" oninput="inputErroStyle(nome)">
+                    <input id="nome" type="text" min="3" oninput="inputErroStyle(nome)" onkeydown="return /[a-z ]/i.test(event.key)">
                 </div>
                 <div>
                     <label for="idade">Idade: </label>
