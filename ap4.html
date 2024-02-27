@@ -74,7 +74,7 @@
 <body>
     <section>
         <fieldset>
-        <legend>Cadastro de Funcionários</legend>
+        <legend>Cadastro</legend>
             <form id="form1">
                 <div>
                     <label for="nome">Nome: </label>
@@ -136,11 +136,11 @@
         }
 
         seApresentar() {
-            alert(`Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`);
+            alert(`Meu nome é ${this.nome} e tenho ${this.idade} anos.`);
         }
 
         trabalhar() {
-            alert(`Atualmente ${this.nome} está trabalhando no cargo de ${this.cargo} em nossa empresa.`);
+            alert(`Atualmente ${this.nome} está trabalhando no cargo de ${this.cargo}.`);
         }
     }
 
@@ -253,7 +253,7 @@
             return false;
         }
 
-        alert(`Usuário ${nome.value} fooi criado com sucesso!\nEstá autorizado a utilizar as funções.`);
+        alert(`Usuário ${nome.value} foi criado com sucesso!\nEstá autorizado a utilizar as funções abaixo.`);
         return true;
     }
 
