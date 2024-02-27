@@ -213,47 +213,47 @@
 
         if (nome.value === '') {
             exibirErro(`Por favor, insira um nome válido`);
-            nome.style.outline = '2px solid red';
+            nome.style.outline = '1px solid red';
             return false;
         }
 
         if(nome.value.length < 3) {
             exibirErro(`"${nome.value}" não é um nome válido. (Min. 3 caracteres)`);
-            nome.style.outline = '2px solid red';
+            nome.style.outline = '1px solid red';
             return false;
         }
 
         if (funcionarios.some(funcionario => funcionario.nome === nome.value)) {
             exibirErro(`Já existe um funcionário com o nome ${nome.value}.`);
-            nome.style.outline = '2px solid red';
+            nome.style.outline = '1px solid red';
             return false;
         }
 
         if (idade.value < 16 || idade.value > 80) {
             exibirErro(`Por favor, insira uma idade válida. (Min. 16 e Max. 80)`);
-            idade.style.outline = '2px solid red';
+            idade.style.outline = '1px solid red';
             return false;
         }
 
         if (cargo.value === '') {
             exibirErro(`Por favor, selecione o seu cargo.`);
-            cargo.style.outline = '2px solid red';
+            cargo.style.outline = '1px solid red';
             return false;
         }
 
         if (cargo.value === 'gerente' && departamento.value === '') {
             exibirErro(`Por favor, insira o departamento.`);
-            departamento.style.outline = '2px solid red';
+            departamento.style.outline = '1px solid red';
             return false;
         }
 
         if (cargo.value === 'desenvolvedor' && linguagem.value === '') {
             exibirErro(`Por favor, insira a linguagem.`);
-            linguagem.style.outline = '2px solid red';
+            linguagem.style.outline = '1px solid red';
             return false;
         }
 
-        alert(`${nome.value} criado com sucesso!\nBem vindo a nossa empresa.`);
+        alert(`Usuário ${nome.value} fooi criado com sucesso!\nEstá autorizado a utilizar as funções.`);
         return true;
     }
 
