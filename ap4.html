@@ -52,7 +52,8 @@
             border: 0;
             border-radius: 5px;
             font-weight: bold;
-            background-color: #3beb8d;
+            background-color: #383838;
+            color: #FFF;
             margin: 15px 0 0 0;
             width: 70%;
             height: 23px;
@@ -64,9 +65,9 @@
             position: relative;
             cursor: pointer;
             transition: 0.5s;
-            transform: translateY(-2px);
-            width: 80%;
             outline: 1px solid #000;
+            background-color: #3beb8d;
+            color: #000;
         }
     </style>
 </head>
@@ -139,7 +140,7 @@
         }
 
         trabalhar() {
-            alert(`${this.nome} está trabalhando no cargo de ${this.cargo}.`);
+            alert(`Atualmente ${this.nome} está trabalhando no cargo de ${this.cargo} em nossa empresa.`);
         }
     }
 
@@ -150,7 +151,7 @@
         }
 
         gerenciar() {
-            alert(`O departamento ${this.departamento} está sendo gerenciado por ${this.nome}.`);
+            alert(`${this.nome} está gerenciando o departamento ${this.departamento}.`);
         }
     }
 
