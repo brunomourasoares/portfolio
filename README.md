@@ -16,7 +16,7 @@ Este projeto consiste em uma página estática com intuito de me apresentar como
 - **Projetos:** links dos repositórios.
 - **Contato:** informações de contato.
 
-## <a href="#"><img src="./assets/img/tecnologia.png" width="20" /></a> Tecnologias utilizadas
+## <a href="#"><img src="./assets/img/technology.png" width="20" /></a> Tecnologias utilizadas
 - HTML5
 - CSS3
 - SCSS
