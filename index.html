@@ -80,7 +80,7 @@
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>Desenvolvedor Full Stack</h3>
-            <p class="fst-italic mt-4 mb-4">Profissional de informática e segurança eletrônica com mais de <p id="anos_trabalho"><script>let idade = calcularIdade('01','01','2006'); document.getElementById("anos_trabalho").innerText = `${idade}`;</script></p> anos de experiência buscando transição para a área de desenvolvimento de software.</p>
+            <p class="fst-italic mt-4 mb-4">Profissional de informática e segurança eletrônica com mais de <p id="anos_trabalho"></p> anos de experiência buscando transição para a área de desenvolvimento de software.</p>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
@@ -394,14 +394,14 @@
   <script src="assets/js/switch.js"></script>
   <script>
     function calcularIdade(dia, mes, ano) {
-        const dataAtual = new Date();
-        let idade = dataAtual.getFullYear() - ano;
-        if (dataAtual.getMonth() + 1 < mes || 
-           (dataAtual.getMonth() + 1 === mes && dataAtual.getDate() < dia)) {
-            idade--;
-        }
-        return idade;
-    }
+      const dataAtual = new Date();
+      let idade = dataAtual.getFullYear() - ano;
+      if (dataAtual.getMonth() + 1 < mes || (dataAtual.getMonth() + 1 === mes && dataAtual.getDate() < dia)) {
+        idade--;
+      }
+      return idade;
+    };
+    document.getElementById("anos_trabalho").innerText = calcularIdade('01','01','2006');
   </script>
 </body>
 </html>
