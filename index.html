@@ -92,7 +92,17 @@
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Idade:</strong><span><script>function(){ new Date().getFullYear() - 1984; }</script></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Idade:</strong><span id="idade_dinamica">
+                  <script>
+                    document.getElementById("idade_dinamica").innerText = (function(dia, mes, ano) {
+                      const hoje = new Date();
+                      let idade = hoje.getFullYear() - ano;
+                      if (hoje.getMonth() + 1 < mes || (hoje.getMonth() + 1 === mes && hoje.getDate() < dia)) {
+                        idade--;
+                      }
+                      return idade;
+                    })(23, 02, 1984);
+                  </script></span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Nível:</strong><span>Júnior</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Home Office:</strong><span>Sim</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Presencial:</strong><span>Somente no RJ</span></li>
