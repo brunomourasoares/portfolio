@@ -80,7 +80,7 @@
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>Desenvolvedor Full Stack</h3>
-            <p class="fst-italic mt-4 mb-4">Profissional de informática e segurança eletrônica com mais de 15 anos de experiência buscando transição para a área de desenvolvimento de software.</p>
+            <p class="fst-italic mt-4 mb-4">Profissional de informática e segurança eletrônica com mais de <script>calcularIdade('1','1','2006');</script> anos de experiência buscando transição para a área de desenvolvimento de software.</p>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
@@ -392,5 +392,18 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/switch.js"></script>
+  <script>
+    function calcularIdade(diaNascimento, mesNascimento, anoNascimento) {
+      const hoje = new Date();
+      const anoAtual = hoje.getFullYear();
+      const mesAtual = hoje.getMonth() + 1;
+      const diaAtual = hoje.getDate();
+      let idade = anoAtual - anoNascimento;
+      if (mesAtual < mesNascimento || (mesAtual === mesNascimento && diaAtual < diaNascimento)) {
+          idade--;
+      }
+      return idade;
+    }
+  </script>
 </body>
 </html>
