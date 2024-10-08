@@ -401,7 +401,8 @@
       }
       return idade;
     };
-    document.getElementById("anos_trabalho").innerText = calcularIdade('01','01','2006');
+    let idade = calcularIdade('1', '1', '2006');
+    document.getElementById("anos_trabalho").innerText = `${idade}`;
   </script>
 </body>
 </html>
