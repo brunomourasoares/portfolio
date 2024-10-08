@@ -392,17 +392,17 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/switch.js"></script>
-  <script>
-    function calcularIdade(dia, mes, ano) {
-      const dataAtual = new Date();
-      let idade = dataAtual.getFullYear() - ano;
-      if (dataAtual.getMonth() + 1 < mes || (dataAtual.getMonth() + 1 === mes && dataAtual.getDate() < dia)) {
-        idade--;
-      }
-      return idade;
-    };
-    let idade = calcularIdade('1', '1', '2006');
-    document.getElementById("anos_trabalho").innerText = `${idade}`;
-  </script>
+<script>
+  function calcularIdade(dia, mes, ano) {
+    const hoje = new Date();
+    const nascimento = new Date(ano, mes - 1, dia);
+    let idade = hoje.getFullYear() - nascimento.getFullYear();
+    if (hoje < new Date(hoje.getFullYear(), nascimento.getMonth(), nascimento.getDate())) {
+      idade--;
+    }
+    return idade;
+  }
+  document.getElementById("anos_trabalho").innerText = calcularIdade(1, 1, 2006);
+</script>
 </body>
 </html>
