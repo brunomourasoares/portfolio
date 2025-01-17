@@ -234,8 +234,8 @@
               <p><em>Desenvolvedor Salesforce</em></p>
               <p>Atribuições:</p>
               <ul>
-                <li>Desenvolvi e otimizei Triggers e Salesforce Flows para automatizar processos</li>
-                <li>Participei da migração de componentes Aura para Lightning Web Components(LWC), melhorando a performance e otimizando a manutenção do código</li>
+                <li>Desenvolvi e otimizei Triggers e Salesforce Flows para automatizar processos.</li>
+                <li>Participei da migração de componentes Aura para Lightning Web Components(LWC), melhorando a performance e otimizando a manutenção do código.</li>
                 <li>Participei da integração completa entre Microsoft Dynamics e Salesforce, permitindo a sincronização de dados em tempo real.</li>
                 <li>Desenvolvi e implementei integrações RESTful e SOAP para conectar sistemas externos ao Salesforce.</li>
               </ul>
@@ -265,6 +265,7 @@
               </ul>
             </div>
           </div>
+        </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="curriculum-title">Idiomas</h3>
             <div class="curriculum-item">
@@ -274,8 +275,7 @@
             <h3 class="curriculum-title">Habilidades</h3>
             <div class="curriculum-item">
               <h4>soft skills</h4>
-              <p>Comunicação | Colaboração | Organização | Inteligência Emocional | Resolução de
-                Problemas | Relacionamento Interpessoal</p>
+              <p>Comunicação | Colaboração | Organização | Inteligência Emocional | Resolução de Problemas | Relacionamento Interpessoal</p>
             </div>
             <div class="curriculum-item">
               <h4>hard skills</h4>
@@ -332,8 +332,8 @@
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
             <div class="icon"><i class="bi bi-window-sidebar"></i></div>
-            <h4 class="title"><a href="#projects" title="Projeto 5" draggable="false">Projeto 5</a></h4>
-            <p class="description">Descrição do projeto 5</p>
+            <h4 class="title"><a href="#projects" title="Projeto 5" draggable="false">...</a></h4>
+            <p class="description">...</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
             <div class="icon"><img src="https://raphafs.github.io/portfolio/assets/img/favicon.png"></div>
@@ -395,18 +395,18 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/switch.js"></script>
-<script>
-  function calcularIdade(dia, mes, ano) {
-    const hoje = new Date();
-    const nascimento = new Date(ano, mes - 1, dia);
-    let idade = hoje.getFullYear() - nascimento.getFullYear();
-    if (hoje < new Date(hoje.getFullYear(), nascimento.getMonth(), nascimento.getDate())) {
-      idade--;
+  <script>
+    function calcularIdade(dia, mes, ano) {
+      const hoje = new Date();
+      const nascimento = new Date(ano, mes - 1, dia);
+      let idade = hoje.getFullYear() - nascimento.getFullYear();
+      if (hoje < new Date(hoje.getFullYear(), nascimento.getMonth(), nascimento.getDate())) {
+        idade--;
+      }
+      return idade;
     }
-    return idade;
-  }
-  document.getElementById("anos_trabalho").innerText = calcularIdade(1, 1, 2006);
-  document.getElementById("idade_dinamica").innerText = calcularIdade(23, 2, 1984);
-</script>
+    document.getElementById("anos_trabalho").innerText = calcularIdade(1, 1, 2006);
+    document.getElementById("idade_dinamica").innerText = calcularIdade(23, 2, 1984);
+  </script>
 </body>
 </html>

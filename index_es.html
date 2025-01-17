@@ -37,7 +37,7 @@
     <div class="d-flex flex-column mt-5">
       <div class="profile">
         <img src="assets/img/profile-img.png" alt="Foto do Bruno M. Soares" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Bruno M. Soares</a></h1>
+        <h1 class="text-light"><a href="index.html" draggable="false">Bruno M. Soares</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="https://www.linkedin.com/in/brunomsoares/" class="linkedin" title="LinkedIn" target="_blank"><i class="bx bxl-linkedin"></i></a>
           <a href="https://github.com/brunomourasoares" class="github" title="GitHub" target="_blank"><i class="bx bxl-github"></i></a>
@@ -137,9 +137,9 @@
               </div>
             </div>
             <div class="progress">
-              <span class="skill">Kotlin<i class="val">0%</i></span>
+              <span class="skill">PHP<i class="val">50%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
@@ -222,16 +222,27 @@
       <div class="container">
         <div class="section-title">
           <h2>Curriculum</h2>
-          <p>Conoce un poco más sobre mi trayectoria profesional y académica.</p>
-          <p>
-            <i class="bi bi-filetype-pdf"><a href="https://drive.usercontent.google.com/u/0/uc?id=1eIO9Kxy7IVvN1x6qPOx6fOCklV7HIFkI&export=download" title="Enlace para descargar CV en PDF" target="_blank"> Enlace para descargar CV en PDF</a></i></p>
+          <p class="mb-3">Conoce un poco más sobre mi trayectoria profesional y académica.</p>
+          <p><i class="bi bi-filetype-pdf fs-3"></i><a href="https://drive.usercontent.google.com/u/0/uc?id=1eIO9Kxy7IVvN1x6qPOx6fOCklV7HIFkI&export=download" title="Enlace para descargar CV en PDF" target="_blank"> Enlace para descargar CV en PDF</a></i></p>
         </div>
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up">
             <h3 class="curriculum-title">Experiencia profesional</h3>
-            <div class="curriculum-item pb-0">
+            <div class="curriculum-item">
+              <h4>Freelancer Empresa confidencial</h4>
+              <h5>09/2024 - 01/2025</h5>
+              <p><em>Desarrollador de Salesforce</em></p>
+              <p>Deberes:</p>
+              <ul>
+                <li>Desarrollé y optimicé Triggers y Salesforce Flows para automatizar procesos.</li>
+                <li>Participé en la migración de componentes de Aura a Lightning Web Components (LWC), mejorando el rendimiento y optimizando el mantenimiento del código.</li>
+                <li>Participé en la integración completa entre Microsoft Dynamics y Salesforce, permitiendo la sincronización de datos en tiempo real.</li>
+                <li>Desarrollé e implementé integraciones RESTful y SOAP para conectar sistemas externos a Salesforce.</li>
+              </ul>
+            </div>
+            <div class="curriculum-item">
               <h4>Braskit Comércio de Componentes Eletrônicos LTDA</h4>
-              <h5>2008 - En este momento</h5>
+              <h5>2008 - 2024</h5>
               <p><em>Técnico Informática y Seguridad Electrónica</em></p>
               <p>Deberes:</p>
               <ul>
@@ -246,21 +257,25 @@
               <h4>Facultad Descomplica</h4>
               <h5>2024 - 2026</h5>
               <p><em>Análisis y desarrollo de Sistemas</em></p>
-            </div>
-            <h3 class="curriculum-title">Idiomas</h3>
-            <div class="curriculum-item">
-              <h4>Ingles</h4>
-              <p>Lectura: <em>Intermediario</em></p>
-              <p>Escribiendo: <em>Intermediario</em></p>
-              <p>Conversación: <em>Básico</em></p>
+              <ul>
+                <li><a href="https://microcertificado.descomplica.com.br/a8017175deaf8cf201713d658f3bcaa11ff5a6fefff15967438ba90d609e336e.png" target="_blank" title="Certificado Basic Frontend">Basic FrontEnd (HTML5 / CSS3 / JS / Bootstrap / UX / Ágil)</a> <h5>240 Horas</h5></li>
+                <li><a href="https://microcertificado.descomplica.com.br/9fa90c51c69de67bbbbcb67417a5071564436289bd803ebf67705ac5ed96bc72.png" target="_blank" title="Certificado Programmer">Programmer (Java / Portugol)</a> <h5>160 Horas</h5></li>
+                <li><a href="https://microcertificado.descomplica.com.br/b91da76f757723a10e58831d3c458d25707f291c0e4f3f36210532d8e6a25003.png" target="_blank" title="Certificado Object-Oriented Developer">Object-Oriented Developer (Java / UML)</a> <h5>240 Horas</h5></li>
+                <li><a href="https://microcertificado.descomplica.com.br/b28fd72d88d876719ee45853eb45d973db52b67051f0730b33c78001e2860110.png" target="_blank" title="Certificado Backend Developer">Backend Developer (Java / Springboot / Oracle SQL)</a> <h5>160 Horas</h5></li>
+              </ul>
             </div>
           </div>
+        </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="curriculum-title">Idiomas</h3>
+            <div class="curriculum-item">
+              <h4>Inglés</h4>
+              <p><em>A2</em></p>
+            </div>
             <h3 class="curriculum-title">Habilidades</h3>
             <div class="curriculum-item">
               <h4>Soft Skills</h4>
-              <p>Comunicación | Colaboración | Organización | Inteligencia Emocional | Resolución de
-                Problemas | Relacionamiento interpersonal</p>
+              <p>Comunicación | Colaboración | Organización | Inteligencia Emocional | Resolución de Problemas | Relacionamiento interpersonal</p>
             </div>
             <div class="curriculum-item">
               <h4>Hard Skills</h4>
@@ -274,11 +289,14 @@
                 <li><a href="https://www.dio.me/certificate/9F89C81A" title="Enlace al certificado de Formación HTML Web Developer" target="_blank">Formación HTML Web Developer (HTML)</a> <h5>21 Horas</h5></li>
                 <li><a href="https://www.dio.me/certificate/4E05D222" title="Enlace al certificado de Formación CSS Web Developer" target="_blank">Formación CSS Web Developer (HTML / CSS)</a> <h5>48 Horas</h5></li>
                 <li><a href="https://www.dio.me/certificate/4E05D222" title="Enlace al certificado de Formación JavaScript Developer" target="_blank">Formación JavaScript Developer (HTML / CSS / JS)</a> <h5>39 Horas</h5></li>
-                <li><a href="#curriculum" title="Enlace al certificado de Formación TypeScript Developer" target="_blank">Formación TypeScript Developer (TypeScript / JS / HTML / CSS)</a> <h5>44 Horas</h5></li>
                 <li><a href="https://www.dio.me/certificate/3D45867E" title="Enlace al certificado de Formación CI/CD com GitLab" target="_blank">Formación CI/CD (Git / GitLab / GCP)</a> <h5>13 Horas</h5></li>
                 <li><a href="https://www.dio.me/certificate/9DB6FD3F" title="Enlace al certificado de Formación ChatGPT for Devs" target="_blank">Formación ChatGPT for Devs (ChatGPT)</a> <h5>18 Horas</h5></li>
                 <li><a href="https://www.dio.me/certificate/OWGTVMRV" title="Enlace al certificado de Formación Linux Fundamentals" target="_blank">Formación Linux Fundamentals (Ubuntu Server/Desktop)</a> <h5>23 Horas</h5></li>
                 <li><a href="https://www.dio.me/certificate/25172941" title="Enlace al certificado de Formación Scrum Master" target="_blank">Formación Scrum Master</a> <h5>22 Horas</h5></li>
+                <li><a href="https://www.dio.me/certificate/JMZ32OW6" title="Enlace al certificado de Formación GitHub Certification" target="_blank" draggable="false">Formación GitHub Certification</a> <h5>10 Horas</h5></li>
+                <li><a href="https://www.dio.me/certificate/TRXZVUUG" title="Enlace al certificado de Bootcamp Santander 2024" target="_blank" draggable="false">Bootcamp Santander 2024 - certificación AWS (AWS)</a> <h5>35 Horas</h5></li>
+                <li><a href="https://www.dio.me/certificate/BRUJ61HZ" title="Enlace al certificado de Formación Node.js Fundamentals" target="_blank" draggable="false">Formación Node.js Fundamentals (Node.js / Express.js / Fastify)</a> <h5>30 Horas</h5></li>
+                <li><a href="https://www.dio.me/certificate/OUOJYDZQ" title="Enlace al certificado de Formación TypeScript Developer" target="_blank">Formación TypeScript Developer (TypeScript / JS / HTML / CSS)</a> <h5>44 Horas</h5></li>
               </ul>
             </div>
           </div>
@@ -293,34 +311,34 @@
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-window"></i></div>
-            <h4 class="title"><a href="#projects" title="Proyecto 1">Proyecto 1</a></h4>
-            <p class="description">Descripción del proyecto 1</p>
+            <div class="icon"><img src="assets/img/myaccess.png" class="img-fluid" alt="MyAccess Desktop" title="MyAccess Desktop" /></div>
+            <h4 class="title"><a href="https://github.com/brunomourasoares/myaccess/" title="MyAccess Desktop" draggable="false">MyAccess Desktop</a></h4>
+            <p class="description">Programa que utiliza JavaFX para control de acceso...</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="bi bi-window-fullscreen"></i></div>
-            <h4 class="title"><a href="#projects" title="Proyecto 2">Proyecto 2</a></h4>
-            <p class="description">Descripción del proyecto 2</p>
+            <h4 class="title"><a href="https://github.com/brunomourasoares/myaccessweb/" title="MyAccess Web" draggable="false">MyAccess Web</a></h4>
+            <p class="description">REST Api usando Spring-Boot para control de acceso...</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-window-desktop"></i></div>
-            <h4 class="title"><a href="#projects" title="Proyecto 3">Proyecto 3</a></h4>
-            <p class="description">Descripción del proyecto 3</p>
+            <div class="icon"><img src="assets/img/badarantwiki.png" class="img-fluid" alt="Badarant Wiki" title="Badarant Wiki" /></i></div>
+            <h4 class="title"><a href="https://github.com/brunomourasoares/badarantwiki" title="Badarant Wiki" draggable="false">Badarant Wiki</a></h4>
+            <p class="description">Sitio que utiliza Node.js con express y consume una API externa...</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="bi bi-window-dock"></i></div>
-            <h4 class="title"><a href="#projects" title="Proyecto 4">Proyecto 4</a></h4>
-            <p class="description">Descripción del proyecto 4</p>
+            <div class="icon"><img src="https://raw.githubusercontent.com/brunomourasoares/fileopener/main/src/main/resources/icon.png" class="img-fluid" alt="File Opener" title="File Opener" /></div>
+            <h4 class="title"><a href="https://github.com/brunomourasoares/fileopener/" title="File Opener" draggable="false">File Opener</a></h4>
+            <p class="description">Programa realizado en Java para ejecutar archivos (.exe) en orden y tiempos específicos.</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
             <div class="icon"><i class="bi bi-window-sidebar"></i></div>
-            <h4 class="title"><a href="#projects" title="Proyecto 5">Proyecto 5</a></h4>
-            <p class="description">Descripción del proyecto 5</p>
+            <h4 class="title"><a href="#projects" title="Projeto 5" draggable="false">...</a></h4>
+            <p class="description">...</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="bi bi-window-split"></i></div>
-            <h4 class="title"><a href="#projects" title="Proyecto 6">Proyecto 6</a></h4>
-            <p class="description">Descripción del proyecto 6</p>
+            <div class="icon"><img src="https://raphafs.github.io/portfolio/assets/img/favicon.png"></div>
+            <h4 class="title"><a href="https://raphafs.github.io/portfolio/" title="Trabalho profissional" draggable="false">Portfolio do RaphaelFS</a></h4>
+            <p class="description">(Trabalho freelance) Criação do portfolio profissional</p>
           </div>
         </div>
       </div>
@@ -361,10 +379,10 @@
   <footer id="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>iPortfolio</span></strong>
+        <!-- &copy; Copyright <strong><span>iPortfolio</span></strong> -->
       </div>
       <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
       </div>
     </div>
   </footer>
@@ -377,5 +395,18 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/switch.js"></script>
+  <script>
+    function calcularIdade(dia, mes, ano) {
+      const hoje = new Date();
+      const nascimento = new Date(ano, mes - 1, dia);
+      let idade = hoje.getFullYear() - nascimento.getFullYear();
+      if (hoje < new Date(hoje.getFullYear(), nascimento.getMonth(), nascimento.getDate())) {
+        idade--;
+      }
+      return idade;
+    }
+    document.getElementById("anos_trabalho").innerText = calcularIdade(1, 1, 2006);
+    document.getElementById("idade_dinamica").innerText = calcularIdade(23, 2, 1984);
+  </script>
 </body>
 </html>
